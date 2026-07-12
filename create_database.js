@@ -13,7 +13,7 @@ con.connect(function (err) {
         console.log("...database is connected!");
 
         var spl = "CREATE DATABASE college";
-        con.query(spl,function (err, result) {
+        con.query(spl, function (err, result) {
             if (err) {
                 console.log(err);
             } else {
@@ -22,4 +22,12 @@ con.connect(function (err) {
             }
         });
     }
+
+    con.end(function (err) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("...database is disconnected!");
+        }
+    });
 });
