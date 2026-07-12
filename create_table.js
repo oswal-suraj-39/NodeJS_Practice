@@ -12,5 +12,16 @@ con.connect(function (err) {
         console.log(err);
     } else {
         console.log("...database is connected!");
+
+        var sql = "CREATE TABLE student(rollno INT(4) PRIMARY KEY, sname VARCHAR(30), scity VARCHAR(30))";
+        con.query(sql, function (err, result) {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("...table is created successfully!");
+                console.log(result);
+            }
+        });
+
     }
 });
