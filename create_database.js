@@ -11,5 +11,15 @@ con.connect(function (err) {
         console.log(err);
     } else {
         console.log("...database is connected!");
+
+        var spl = "CREATE DATABASE college";
+        con.query(spl,function (err, result) {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("...query is successfully run!");
+                console.log(result);
+            }
+        });
     }
 });
