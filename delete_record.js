@@ -12,6 +12,16 @@ con.connect(function(err) {
     } else {
         console.log("...database is connected!");
 
+        var cmd = "DELETE FROM student WHERE scity = 'pune'";
+        con.query(cmd, function(err, result) {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("...deleted specific row from the table!");
+                console.log(result);
+            }
+        });
+
         con.end(function(err) {
             if (err) {
                 console.log(err);
