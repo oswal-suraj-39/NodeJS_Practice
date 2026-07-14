@@ -12,8 +12,8 @@ con.connect(function(err) {
     } else {
         console.log("...database is connected!");
 
-        var cmd = "DELETE FROM student WHERE scity = 'pune'";
-        con.query(cmd, function(err, result) {
+        var sql = "DELETE FROM student WHERE scity = 'pune'";
+        con.query(sql, function(err, result) {
             if (err) {
                 console.log(err);
             } else {
