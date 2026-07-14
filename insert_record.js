@@ -13,6 +13,20 @@ con.connect(function (err) {
         console.log(err);
     } else {
         console.log("...database is connected!");
+        
+        var rollNo = parseInt(prompt('enter roll number: '));
+        var sName = prompt('enter student name: ');
+        var sCity = prompt('enter student city: ');
+        var cmd = "INSERT INTO student (rollno, sname, scity) VALUES (?, ?, ?)";
+
+        con.query(cmd, [rollNo, sName, sCity], function(err, result) {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("...record is insert into table successfully!");
+                console.log(result);
+            } 
+        });
 
         con.end(function (err) {
             if (err) {
