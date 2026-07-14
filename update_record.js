@@ -7,3 +7,18 @@ var con = mysql.createConnection({
     database: "college"
 });
 
+con.connect(function(err) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log("...database is connected!");
+
+        con.end(function(err) {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("...database is disconnected!");
+            }
+        });
+    }
+});
