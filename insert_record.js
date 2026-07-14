@@ -17,9 +17,9 @@ con.connect(function (err) {
         var rollNo = parseInt(prompt('enter roll number: '));
         var sName = prompt('enter student name: ');
         var sCity = prompt('enter student city: ');
-        var cmd = "INSERT INTO student (rollno, sname, scity) VALUES (?, ?, ?)";
+        var sql = "INSERT INTO student (rollno, sname, scity) VALUES (?, ?, ?)";
 
-        con.query(cmd, [rollNo, sName, sCity], function(err, result) {
+        con.query(sql, [rollNo, sName, sCity], function(err, result) {
             if (err) {
                 console.log(err);
             } else {
