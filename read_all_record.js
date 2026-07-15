@@ -13,8 +13,8 @@ con.connect(function(err) {
     } else {
         console.log("...database is connected!");
 
-        var cmd = "SELECT * FROM student";
-        con.query(cmd, function(err, result) {
+        var sql = "SELECT * FROM student";
+        con.query(sql, function(err, result) {
             if (err) {
                 console.log(err);        
             } else {
