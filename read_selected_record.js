@@ -13,6 +13,16 @@ con.connect(function(err) {
     } else {
         console.log("...database is connected!");
 
+        var sql = "SELECT rollno, sname, scity From student WHERE scity = 'y'";
+        con.query(sql, function(err, result) {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("...selected specific row from the table!");
+                console.log(result);
+            }
+        });
+
         con.end(function(err) {
             if (err) {
                 console.log(err);
