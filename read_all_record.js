@@ -12,6 +12,16 @@ con.connect(function(err) {
         console.log(err);
     } else {
         console.log("...database is connected!");
+
+        var cmd = "SELECT * FROM student";
+        con.query(cmd, function(err, result) {
+            if (err) {
+                console.log(err);        
+            } else {
+                console.log("...selected all rows from table successfully!");
+                console.log(result);
+            }
+        });
     
         con.end(function (err) {
             if (err) {
